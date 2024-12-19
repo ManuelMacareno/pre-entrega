@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cargarProductos(true, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
     }
 
-    if (window.location.pathname.includes('index.html')) {
+    if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
         cargarProductos(false, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
     }
 
@@ -169,26 +169,26 @@ function cargarCarrito() {
     totalContainer.textContent = total.toFixed(2);
 
     document.querySelectorAll('.sumar-cantidad').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const index = this.dataset.index;
             actualizarCantidadCarrito(index, 'sumar');
         });
     });
 
     document.querySelectorAll('.restar-cantidad').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const index = this.dataset.index;
             actualizarCantidadCarrito(index, 'restar');
         });
     });
 
     document.querySelectorAll('.eliminar-producto').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const index = this.dataset.index;
             let carrito = JSON.parse(localStorage.getItem('carrito'));
             carrito.splice(index, 1);
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            cargarCarrito(); 
+            cargarCarrito();
         });
     });
 }
