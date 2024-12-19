@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (window.location.pathname.includes('index.html')) {
-        cargarProductos(true, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
+        cargarProductos(false, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
     }
 
     if (window.location.pathname.includes('carrito.html')) {
