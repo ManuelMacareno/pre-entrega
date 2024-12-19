@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cargarProductos(true, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
     }
 
-    if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         cargarProductos(false, productosContainer, modal, cerrarModal, nombreProducto, descripcionProducto);
     }
 
